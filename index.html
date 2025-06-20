@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kerk Magculang Portfolio Map</title>
+  <script src="./js/gsap.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #000;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      font-family: Arial, sans-serif;
+    }
+
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      color: white;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 10px;
+      padding: 10px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.5);
+      overflow: hidden;
+      flex-direction: column;
+      z-index: 2;
+    }
+
+    .bubble-label{
+      font-size: 12px;
+    }
+    .bubble.child {
+      font-size: 9px;
+      background: #00ff73;
+      z-index: 500;
+    }
+    .bubble-img{
+      width:120px; 
+    }
+    .bubble-link{
+      text-decoration: none;
+      background-color: white;
+      border-radius: 4px;
+      padding: 4px 8px;
+      color: black;
+    }
+
+    .bubble-details{
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+
+    .center {
+      background: #ffbf00;
+      font-size: 12px;
+      z-index: 10;
+    }
+
+    .subtitle {
+      font-size: 9px;
+      font-weight: normal;
+      color: #ddd;
+      margin-top: 2px;
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .center img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 5px;
+      border: 2px solid white;
+    }
+
+    .line {
+      position: absolute;
+      height: 1px;
+      background: white;
+      border-top: 1px dashed rgba(255, 255, 255, 0.4);
+      transform-origin: left center;
+      z-index: 1;
+    }
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8); /* semi-transparent dark */
+      pointer-events: none;        /* allow clicks to pass through */
+      opacity: 0;
+      z-index: 5;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+  <div id="overlay"></div>
+
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
+
