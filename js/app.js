@@ -254,6 +254,8 @@ for (let i = 1; i < data.length; i++) {
         });
 
         overlay.style.opacity = 1;
+        overlay.style.backgroundImage = 'url("./src/image 206.png")';
+
 
         timeoutId = setTimeout(() => {
           delayedCircle.style.display = "block";
