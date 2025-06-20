@@ -104,11 +104,76 @@
       pointer-events: none;
     }
 
+    #delayedCircle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 32dvw;
+  height: 32dvw;
+  border-radius: 50%;
+  background: #ffbf00;
+  z-index: 500; /* must be higher than centerBubble */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+
   </style>
 </head>
 <body>
   <div id="container"></div>
   <div id="overlay"></div>
+<!-- This is your pre-coded circle -->
+  <div id="delayedCircle" class="bubble new-center-circle" style="display: none;">
+    <!-- <img src="./src/130.png" alt="Inner Circle" /> -->
+    <h3>Hello from the center!</h3>
+    <h3>Hello from the center!</h3>
+    <h3>Hello from the center!</h3>
+    <h3>Hello from the center!</h3>
+    <h3>Hello from the center!</h3>
+    <h3>Hello from the center!</h3>
+    <h3>Hello from the center!</h3>
+    <h3>Hello from the center!</h3>
+    <h3>Hello from the center!</h3>
+    <h3>Hello from the center!</h3>
+    <h3>Hello from the center!</h3>
+    <h3>Hello from the center!</h3>
+    <h3>Hello from the center!</h3>
+    <h3>Hello from the center!</h3>
+  </div>
+  <div id="rightCircle" class="bubble extra-circle" style="
+    position: absolute;
+    width: 20.83dvW;
+    height: 20.83dvW;
+    background: #5e3f97;
+    left: 68%;
+    top: 20%;
+    z-index: 400;
+    opacity:0;
+  ">
+    <h3 style="color: #000;">Right Circle</h3>
+  </div>
+  <div id="leftCircle" class="bubble extra-circle" style="
+    position: absolute;
+    width: 10.42dvw;
+    height: 10.42dvw;
+    background: #6fcf97;
+    right: 68%;
+    top: 50%;
+    z-index: 400;
+    opacity:0;
+  ">
+    <h3 style="color: #000;">Right Circle</h3>
+  </div>
+
+
+
+
 
 
   <script src="./js/app.js"></script>
