@@ -11,7 +11,7 @@ let currentCenteredBubble = null;
 const data = [
       { label: "<span style = 'font-size:15px' > Kerk Christian P. Magculang: </span> <br> A Chemical Engineer in the Making", 
         value: 200, 
-        subtitle: "My UPD BS ChE Portfolio", image: "./src/center.png" },
+        subtitle: "My UPD BS ChE Portfolio", image: "./src/Center.png" },
       {
         label: "GAMA: A Proposal for a New Source of Crude Oil for Malampaya Project",
         value: 80,
