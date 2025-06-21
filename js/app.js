@@ -45,13 +45,35 @@ const data = [
           { label: "Problem Analysis", color: "#D6CDEA" },
           { label: "Design & Development of Solutions", color: "#BEE3BE" },
           { label: "Digital Tools Usage", color: "#FFD8B1" },
-          { label: "Investigation", color: "#C7CEDB" },
+          { label: "", color: "transparent" },
           { label: "Individual and Collaborative Work", color: "#B3DDD1" },
           { label: "The Engineering and the world", color: "#F8D8C7" },
           { label: "Ethics", color: "#FFF4B1" },
           { label: "Communication", color: "#F9D5E5"},
           { label: "Project Management", color: "#D9E5C3" },
           { label: "Lifelong Learning", color: "#D3EAF2" },
+        ]
+      },
+      { 
+        label: "Students' National Chemical Engineering Conference", value: 77, 
+        value: 75,
+        subtitle: "Kinetics & Reactor Design",
+        desc: "Explore reaction rates, mechanisms, and reactor models.",
+        img: "./src/130.png",
+        mentor:"mamao",
+        link: "https://example.com/chem-reaction",
+        children: [
+          { label: "Engineering Knowledge", color: "#e63946" },
+          { label: "Problem Analysis", color: "#457b9d" },
+          { label: "Design & Development of Solutions" },
+          { label: "Digital Tools Usage", color: "#2a9d8f" },
+          { label: "Investigation", },
+          { label: "Individual and Collaborative Work", color: "#3e9d8f" },
+          { label: "The Engineering and the world", color: "#4d9d8f" },
+          { label: "Ethics", color: "#4d9d8f" },
+          { label: "Communication",},
+          { label: "Project Management", color: "#4d9d8f" },
+          { label: "Lifelong Learning", color: "#4d9d8f" },
         ]
       },
       {
@@ -113,28 +135,6 @@ const data = [
       { label: "Career Assistance Program for Engineering Students", value: 52 },
       { label: "Indakan Dance Competitions", value: 50 },
       { label: "Engineering Week Shenanigans", value: 54 },
-      { 
-        label: "Students' National Chemical Engineering Conference", value: 77, 
-        value: 75,
-        subtitle: "Kinetics & Reactor Design",
-        desc: "Explore reaction rates, mechanisms, and reactor models.",
-        img: "./src/130.png",
-        mentor:"mamao",
-        link: "https://example.com/chem-reaction",
-        children: [
-          { label: "Engineering Knowledge", color: "#e63946" },
-          { label: "Problem Analysis", color: "#457b9d" },
-          { label: "Design & Development of Solutions" },
-          { label: "Digital Tools Usage", color: "#2a9d8f" },
-          { label: "Investigation", },
-          { label: "Individual and Collaborative Work", color: "#3e9d8f" },
-          { label: "The Engineering and the world", color: "#4d9d8f" },
-          { label: "Ethics", color: "#4d9d8f" },
-          { label: "Communication",},
-          { label: "Project Management", color: "#4d9d8f" },
-          { label: "Lifelong Learning", color: "#4d9d8f" },
-        ]
-      }
     ];
 
     function getHeatColor(value) {;
@@ -170,6 +170,8 @@ centerBubble.innerHTML = `
 `;
 container.appendChild(centerBubble);
 placedBubbles.push({ x: centerX, y: centerY, size: centerSize });
+
+console.log(data.length);
 
 for (let i = 1; i < data.length; i++) {
   const { label, value, subtitle, desc, img,mentor, link, children } = data[i];
