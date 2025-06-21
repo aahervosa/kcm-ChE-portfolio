@@ -30,10 +30,30 @@
       overflow: hidden;
       flex-direction: column;
       z-index: 2;
+      overflow: hidden;
     }
 
     .bubble-label{
+      position: relative;
       font-size: 12px;
+      z-index: 1;
+    }
+
+    .bubble-label::after {
+      content: "";
+      width: 500px;
+      height: 500px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background-color: rgba(0, 0, 0, 0.4); /* translucent black overlay */
+      z-index: -1; /* puts the overlay behind the text */
+      border-radius: 50%; /* optional, matches bubble styling */
+      transition: all .2s ease-in;
+    }
+    .bubble-label.no-after::after {
+      opacity: 0;
     }
     .bubble.child {
       font-size: 9px;

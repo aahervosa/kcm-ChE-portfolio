@@ -198,6 +198,8 @@ for (let i = 1; i < data.length; i++) {
       placed = true;
 
       const bubble = document.createElement("div");
+      const imageURL = img ? img : "./src/128.png";
+
       bubble.childrenData = children || [];
       bubble.childBubbles = [];
       bubble.className = "bubble";
@@ -205,14 +207,16 @@ for (let i = 1; i < data.length; i++) {
       bubble.style.height = `${size}px`;
       bubble.style.left = `${x - size / 2}px`;
       bubble.style.top = `${y - size / 2}px`;
-      bubble.style.background = `${img}`;
+      bubble.style.background = color;
+      bubble.style.backgroundImage = `url(${imageURL})`;
+      bubble.style.backgroundSize = "contain";
       console.log(`${img}`);
       bubble.innerHTML = `
+        <div class="overlay"></div>
         <div class="bubble-label">${label}</div>
-          <div> ${img ? `<img src="${img}" class="bubble-img" />` : ""}</div>
         <div class="bubble-details" style="display: none;">
           ${subtitle ? `<div class="subtitle">${subtitle}</div>` : ""}
-        
+          ${img ? `<img src="${img}" class="bubble-img" />` : ""}
           ${desc ? `<div class="desc">${desc}</div>` : ""}
           ${desc ? `<div class="mentor">${mentor}</div>` : ""}
           ${link ? `<a href="${link}" class="bubble-link" target="_blank">Learn More</a>` : ""}
@@ -355,6 +359,7 @@ for (let i = 1; i < data.length; i++) {
         gsap.to(bubble, {
           width: targetSize,
           height: targetSize,
+          backgroundImage: "none",
           padding: 40,
           left: `${bubbleCenterX}px`,
           top: `${bubbleCenterY}px`,
@@ -370,6 +375,13 @@ for (let i = 1; i < data.length; i++) {
         overlay.style.opacity = 1;
         bubble.querySelector('.bubble-details')?.style.setProperty('display', 'flex');
         bubble.querySelector('.bubble-label')?.style.setProperty('max-width', '80%');
+
+        const label = bubble.querySelector('.bubble-label');
+        console.log(label);
+        if (label) {
+          label.classList.add('no-after');
+        }
+
 
         if (bubble.childrenData.length > 0) {
           const angleStep = (2 * Math.PI) / bubble.childrenData.length;
@@ -430,6 +442,7 @@ for (let i = 1; i < data.length; i++) {
           height: original.height,
           left: `${original.left}px`,
           top: `${original.top}px`,
+          backgroundImage: `url(${imageURL})`,
           duration: 0.4,
           padding:10,
           ease: "power2.inOut",
@@ -447,6 +460,12 @@ for (let i = 1; i < data.length; i++) {
 
         bubble.querySelector('.bubble-details')?.style.setProperty('display', 'none');
         bubble.querySelector('.bubble-label')?.style.setProperty('max-width', '100%');
+
+        const label = bubble.querySelector('.bubble-label');
+        console.log(label);
+        if (label) {
+          label.classList.remove('no-after');
+        }
 
         bubble.childBubbles.forEach(child => child.remove());
         bubble.childBubbles = [];
