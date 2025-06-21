@@ -9,7 +9,7 @@ let currentCenteredBubble = null;
 
 
 const data = [
-      { label: "Kerk Christian P. Magculang: A Chemical Engineer in the Making", 
+      { label: "<span style = 'font-size:15px' > Kerk Christian P. Magculang: </span> <br> A Chemical Engineer in the Making", 
         value: 200, 
         subtitle: "My UPD BS ChE Portfolio", image: "./src/center.png" },
       {
@@ -270,7 +270,7 @@ const data = [
         },
       { label: "Process Engineering Laboratory",
         value: 75,
-        subtitle: "Projects: Size Does Matter! A Particle Size and Energy Consumption Analysis on Alum Rock Size Reduction, Beading the Allegations: An Analysis on the Behavior of Glass Beads in Fluidization, Night-Meyer Before Christmas: Determination of the Molecular Weight of Hexane via The Victor-Meyer Method, Ang Hot Niya!: An Analysis on the Effects of Aperture Gap and Distance on Incident Radiation, Please Flash After Use: Flash and Fire Point Determination of Ethanol-Water Mixtures, I Don’t Feel Any Pressure Right Now: An Analysis on Centrifugal Pumps",
+        subtitle: "Projects: Size Does Matter! A Particle Size and Energy Consumption Analysis on Alum Rock Size Reduction <br> Beading the Allegations: An Analysis on the Behavior of Glass Beads in Fluidization <br> Night-Meyer Before Christmas: Determination of the Molecular Weight of Hexane via The Victor-Meyer Method, Ang Hot Niya!: An Analysis on the Effects of Aperture Gap and Distance on Incident Radiation, Please Flash After Use: Flash and Fire Point Determination of Ethanol-Water Mixtures, I Don’t Feel Any Pressure Right Now: An Analysis on Centrifugal Pumps",
         desc: "This course involved conducting and analyzing six distinct laboratory experiments, each targeting a key chemical engineering principle and reinforcing a unique technical concept. Writing formal lab reports for each developed my ability to interpret experimental data, identify sources of error, and present findings in a clear and structured manner. This experience strengthened both my practical and analytical skill sets, reinforcing my competence in hands-on experimentation and scientific communication.",
         img: "./src/130.png",
         mentor:"Mentor: Dr. Isaac Jerome C. Dela Cruz, Dr. Jay R T. Adolacion",
@@ -310,52 +310,10 @@ const data = [
           { label: "Lifelong Learning", color: "#D3EAF2" },
         ]
       },
-      { label: "Chemical Process Industries",
-        value: 75,
-        subtitle: "Kinetics & Reactor Design",
-        desc: "Explore reaction rates, mechanisms, and reactor models.",
-        img: "./src/130.png",
-        mentor:"mamao",
-        link: "https://example.com/chem-reaction",
-        children: [
-          { label: "Engineering Knowledge", color: "#A7C7E7" },
-          { label: "Problem Analysis", color: "#D6CDEA" },
-          { label: "Design & Development of Solutions", color: "#BEE3BE" },
-          { label: "Digital Tools Usage", color: "#FFD8B1" },
-          { label: "Investigation", color: "#C7CEDB" },
-          { label: "Individual and Collaborative Work", color: "#B3DDD1" },
-          { label: "The Engineering and the world", color: "#F8D8C7" },
-          { label: "Ethics", color: "#FFF4B1" },
-          { label: "Communication", color: "#F9D5E5"},
-          { label: "Project Management", color: "#D9E5C3" },
-          { label: "Lifelong Learning", color: "#D3EAF2" },
-        ]
-      },
-      { label: "SpeChEl Delivery: Chemical Engineering Freshie Assistance",
-       value: 75,
-        subtitle: "Kinetics & Reactor Design",
-        desc: "Explore reaction rates, mechanisms, and reactor models.",
-        img: "./src/130.png",
-        mentor:"mamao",
-        link: "https://example.com/chem-reaction",
-        children: [
-          { label: "Engineering Knowledge", color: "#A7C7E7" },
-          { label: "Problem Analysis", color: "#D6CDEA" },
-          { label: "Design & Development of Solutions", color: "#BEE3BE" },
-          { label: "Digital Tools Usage", color: "#FFD8B1" },
-          { label: "Investigation", color: "#C7CEDB" },
-          { label: "Individual and Collaborative Work", color: "#B3DDD1" },
-          { label: "The Engineering and the world", color: "#F8D8C7" },
-          { label: "Ethics", color: "#FFF4B1" },
-          { label: "Communication", color: "#F9D5E5"},
-          { label: "Project Management", color: "#D9E5C3" },
-          { label: "Lifelong Learning", color: "#D3EAF2" },
-        ]
-      },
-      { label: "SpeChEl Delivery: Chemical Engineering Freshie Assistance",
-       value: 75,
-        subtitle: "Kinetics & Reactor Design",
-        desc: "Explore reaction rates, mechanisms, and reactor models.",
+      { label: "SpeChEl Delivery: Chemical Engineering Freshie Assistance 2020",
+        value: 80,
+        subtitle: "Overall Head",
+        desc: "As my first major headship in college, I led SpeChEl Delivery: ChEFAsT 2020—a pioneering initiative to assist over 120 Chemical Engineering freshies, shiftees, and transferees in their transition to UP Diliman during the shift to remote learning. Amid the challenges of the pandemic, our team organized engaging online activities, provided academic and emotional support, and helped new students adjust to the university’s learning environment. This experience developed my leadership, communication, and empathy, and taught me how to manage a large-scale student support system under uncertain and evolving conditions—skills that are just as critical in engineering teams and workplace settings.",
         img: "./src/130.png",
         mentor:"mamao",
         link: "https://example.com/chem-reaction",
@@ -635,7 +593,7 @@ for (let i = 1; i < data.length; i++) {
       const leftCircle = document.getElementById('leftCircle');
       const rightCircle = document.getElementById('rightCircle');
       const lefterCircle = document.getElementById('lefterCircle');
-
+      const leftestCircle = document.getElementById('leftestCircle');
       centerBubble.addEventListener("mouseenter", () => {
         gsap.to(centerBubble, {
           width: 300,
@@ -651,13 +609,13 @@ for (let i = 1; i < data.length; i++) {
 
 
         timeoutId = setTimeout(() => {
-          delayedCircle.style.display = "block";
+          delayedCircle.style.display = "flex";
 
           gsap.fromTo(delayedCircle, 
             { scale: 0, opacity: 0 }, 
             { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)",
               onComplete: () => {
-                gsap.fromTo([rightCircle, leftCircle, lefterCircle],
+                gsap.fromTo([rightCircle, leftCircle, lefterCircle, leftestCircle],
                    { scale: 0, opacity: 0 }, 
                    { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)"}
                 );
@@ -670,8 +628,8 @@ for (let i = 1; i < data.length; i++) {
       // Don't hide the delayedCircle on centerBubble mouseleave
       centerBubble.addEventListener("mouseleave", () => {
         gsap.to(centerBubble, {
-          width: 180,
-          height: 180,
+          width: 250,
+          height: 250,
           padding: 0,
           duration: 0.4,
           ease: "power2.inOut",
@@ -695,7 +653,7 @@ for (let i = 1; i < data.length; i++) {
           ease: "power2.inOut",
           onComplete: () => {
             delayedCircle.style.display = "none";
-             gsap.fromTo([rightCircle, leftCircle, lefterCircle],
+             gsap.fromTo([rightCircle, leftCircle, lefterCircle, leftestCircle],
                 { scale: 1, opacity: 1 }, 
                 { scale: 0, opacity: 0, duration: 0.5, ease: "back.out(1.7)"}
             );
