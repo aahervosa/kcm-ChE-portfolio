@@ -76,7 +76,27 @@ const data = [
           { label: "Lifelong Learning", color: "#D3EAF2" },
         ]
       },
-      { label: "Separation Processes", value: 85 },
+      { label: "Separation Processeses",
+        value: 75,
+        subtitle: "Kinetics & Reactor Design",
+        desc: "Explore reaction rates, mechanisms, and reactor models.",
+        img: "./src/130.png",
+        mentor:"mamao",
+        link: "https://example.com/chem-reaction",
+        children: [
+          { label: "Engineering Knowledge", color: "#A7C7E7" },
+          { label: "Problem Analysis", color: "#D6CDEA" },
+          { label: "Design & Development of Solutions", color: "#BEE3BE" },
+          { label: "Digital Tools Usage", color: "#FFD8B1" },
+          { label: "Investigation", color: "#C7CEDB" },
+          { label: "Individual and Collaborative Work", color: "#B3DDD1" },
+          { label: "The Engineering and the world", color: "#F8D8C7" },
+          { label: "Ethics", color: "#FFF4B1" },
+          { label: "Communication", color: "#F9D5E5"},
+          { label: "Project Management", color: "#D9E5C3" },
+          { label: "Lifelong Learning", color: "#D3EAF2" },
+        ]
+      },
       { label: "Particle Technology", value: 50 },
       { label: "Process Engineering Laboratory", value: 60 },
       { label: "Chemical Plant and Process Economics", value: 40 },
@@ -135,7 +155,7 @@ const placedBubbles = [];
 
 // Add center bubble
 const centerData = data[0];
-const centerSize = 180;
+const centerSize = 200;
 const centerBubble = document.createElement("div");
 centerBubble.className = "bubble center";
 centerBubble.style.width = `${centerSize}px`;
@@ -185,12 +205,14 @@ for (let i = 1; i < data.length; i++) {
       bubble.style.height = `${size}px`;
       bubble.style.left = `${x - size / 2}px`;
       bubble.style.top = `${y - size / 2}px`;
-      bubble.style.background = color;
+      bubble.style.background = `${img}`;
+      console.log(`${img}`);
       bubble.innerHTML = `
         <div class="bubble-label">${label}</div>
+          <div> ${img ? `<img src="${img}" class="bubble-img" />` : ""}</div>
         <div class="bubble-details" style="display: none;">
           ${subtitle ? `<div class="subtitle">${subtitle}</div>` : ""}
-          ${img ? `<img src="${img}" class="bubble-img" />` : ""}
+        
           ${desc ? `<div class="desc">${desc}</div>` : ""}
           ${desc ? `<div class="mentor">${mentor}</div>` : ""}
           ${link ? `<a href="${link}" class="bubble-link" target="_blank">Learn More</a>` : ""}
@@ -242,6 +264,7 @@ for (let i = 1; i < data.length; i++) {
       const delayedCircle = document.getElementById('delayedCircle');
       const leftCircle = document.getElementById('leftCircle');
       const rightCircle = document.getElementById('rightCircle');
+      const lefterCircle = document.getElementById('lefterCircle');
 
       centerBubble.addEventListener("mouseenter", () => {
         gsap.to(centerBubble, {
@@ -264,7 +287,7 @@ for (let i = 1; i < data.length; i++) {
             { scale: 0, opacity: 0 }, 
             { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)",
               onComplete: () => {
-                gsap.fromTo([rightCircle, leftCircle],
+                gsap.fromTo([rightCircle, leftCircle, lefterCircle],
                    { scale: 0, opacity: 0 }, 
                    { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)"}
                 );
@@ -302,7 +325,7 @@ for (let i = 1; i < data.length; i++) {
           ease: "power2.inOut",
           onComplete: () => {
             delayedCircle.style.display = "none";
-             gsap.fromTo([rightCircle, leftCircle],
+             gsap.fromTo([rightCircle, leftCircle, lefterCircle],
                 { scale: 1, opacity: 1 }, 
                 { scale: 0, opacity: 0, duration: 0.5, ease: "back.out(1.7)"}
             );
