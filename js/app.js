@@ -311,10 +311,10 @@ const data = [
         ]
       },
       { label: "SpeChEl Delivery: Chemical Engineering Freshie Assistance 2020",
-        value: 75,
+        value: 80,
         subtitle: "Overall Head",
         desc: "As my first major headship in college, I led SpeChEl Delivery: ChEFAsT 2020—a pioneering initiative to assist over 120 Chemical Engineering freshies, shiftees, and transferees in their transition to UP Diliman during the shift to remote learning. Amid the challenges of the pandemic, our team organized engaging online activities, provided academic and emotional support, and helped new students adjust to the university’s learning environment. This experience developed my leadership, communication, and empathy, and taught me how to manage a large-scale student support system under uncertain and evolving conditions—skills that are just as critical in engineering teams and workplace settings.",
-        img: "./src/130.png",
+        img: "./src/spechel.png",
         mentor:"",
         link: "https://drive.google.com/drive/folders/1iesTkeOM6IPxCz0QiQu_wwUW525HLv2a?usp=sharing",
         children: [
