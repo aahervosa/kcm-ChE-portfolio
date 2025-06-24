@@ -1,4 +1,6 @@
 const container = document.getElementById('container');
+const closeBtn = document.getElementById('close');
+const closeBtnB = document.getElementById('closeB');
 const screenW = window.innerWidth;
 const screenH = window.innerHeight;
 const centerX = screenW / 2;
@@ -626,13 +628,10 @@ for (let i = 1; i < data.length; i++) {
         });
 
         overlay.style.opacity = 1;
+        overlay.style.pointerEvents = 'unset';
         // overlay.style.backgroundImage = 'url("./src/image 206.png")';
-
-
-        timeoutId = setTimeout(() => {
-          delayedCircle.style.display = "flex";
-
-          gsap.fromTo(delayedCircle, 
+        delayedCircle.style.display = "flex";
+        gsap.fromTo(delayedCircle, 
             { scale: 0, opacity: 0 }, 
             { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)",
               onComplete: () => {
@@ -643,7 +642,6 @@ for (let i = 1; i < data.length; i++) {
               }
              },
           );
-        }, 20); // Change to 1000 if you want a 1s delay
       });
 
       // Don't hide the delayedCircle on centerBubble mouseleave
@@ -658,14 +656,37 @@ for (let i = 1; i < data.length; i++) {
         });
 
         // overlay.style.opacity = 0;
+        closeBtn.style.display = 'block';
 
         clearTimeout(timeoutId);
         // NOTE: Don't hide delayedCircle here
       });
 
+      centerBubble.addEventListener("mouseenter", () => {
+        gsap.to(centerBubble, {
+          scale: 1.25,
+          duration: 0.4,
+          ease: "power2.inOut",
+          zIndex: 999
+        });
+      });
+
+      centerBubble.addEventListener("mouseleave", () => {
+        gsap.to(centerBubble, {
+          scale: 1,
+          duration: 0.4,
+          ease: "power2.inOut",
+          zIndex: 2
+        });
+      });
+
+
       // ✅ Hide only when leaving the delayedCircle itself
-      delayedCircle.addEventListener("click", () => {
+      closeBtn.addEventListener("click", () => {
         overlay.style.opacity = 0;
+        overlay.style.pointerEvents = 'none';
+        closeBtn.style.display = 'none';
+        
 
         gsap.to(delayedCircle, {
           opacity: 0,
@@ -718,6 +739,8 @@ for (let i = 1; i < data.length; i++) {
 
 
         overlay.style.opacity = 1;
+        overlay.style.pointerEvents = 'none';
+        closeBtnB.style.display = 'block';
         bubble.querySelector('.bubble-details')?.style.setProperty('display', 'flex');
         bubble.querySelector('.bubble-label')?.style.setProperty('max-width', '80%');
 
@@ -776,7 +799,8 @@ for (let i = 1; i < data.length; i++) {
         }
       });
 
-      bubble.addEventListener("click", () => {
+      closeBtnB.addEventListener("click", () => {
+        closeBtnB.style.display = 'none';
         if (bubble.isAnimating) return;
         bubble.isAnimating = true;
 
@@ -798,6 +822,7 @@ for (let i = 1; i < data.length; i++) {
             if (currentCenteredBubble === bubble) {
               currentCenteredBubble = null;
               overlay.style.opacity = 0;
+              overlay.style.pointerEvents = 'none';
             }
             if (bubble.line) bubble.line.style.opacity = 1;
           }
