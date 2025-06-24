@@ -291,7 +291,7 @@ const data = [
       },
       { label: "Special Projects Laboratory",
        value: 55,
-        subtitle: "Projects: <br> A Chemical Engineering Perspective on the Energy Storage Mechanisms of an 18650 Lithium-Ion Battery <br> Determination of Residence Time Distribution in a Plug Flow Reactor using Conductivity Measurements <br> Water diffusion modelling in a porous polymer matrix <br> Optimization of Sedimentation Efficiency in Soil-Laden Water Using Alum and Baking Soda as Coagulants",
+        subtitle: "Projects: <br> Water Diffusion Modelling in a Porous Polymer Matrix <br> A ChE Perspective on the Energy Storage Mechanisms of an 18650 Lithium-Ion Battery <br> Determination of Residence Time Distribution in a Plug Flow Reactor using Conductivity Measurements <br>  Optimization of Sedimentation Efficiency in Soil-Laden Water Using Alum and Baking Soda as Coagulants",
         desc: "This course provided a unique opportunity to rotate among four different chemical engineering laboratories, where we conducted a series of experiments that ranged from modeling water diffusion in polymer matrices and analyzing residence time distribution in plug flow reactors, to optimizing sedimentation with eco-friendly coagulants. A highlight of this course was our independently designed experiment on the energy storage mechanisms of 18650 lithium-ion batteries, developed under the Laboratory of Electrochemical Engineering. Working closely with fellow students and professors, I honed my experimental design, data analysis, and interdisciplinary collaboration skills while learning to adapt to varying research environments and objectives. This experience deepened my curiosity and strengthened my confidence in applying chemical engineering principles to novel, real-world systems.",
         img: "./src/136.png",
         mentor:"Mentors: Dr. Joey D. Ocon, Engr. Mecaelah S. Palaganas",
@@ -438,7 +438,7 @@ const data = [
       },
       { label: "Indakan Dance Competitions",
         value: 60,
-        subtitle: "Competitions: <br> Ever After 2020: 1st Runner Up <br> Women of Pop 2023: 5th Place <br> Paint the Stage: 1st Runner Up <br> All Kill 2025: 6th Place",
+        subtitle: "Competitions: <br> Ever After 2020: 1st Runner Up <br> Women of Pop 2023: 5th Place <br> Paint the Stage 2024: 1st Runner Up <br> All Kill 2025: 6th Place",
         desc: "For four consecutive years, I represented my organization in the Indakan dance competition during Engineering Week, serving as a head in my first year and a supportive guide in the years that followed. Balancing intense practice sessions with academic demands challenged me to sharpen my time management, discipline, and resilience. Beyond performance, the experience taught me how to lead and uplift a team, navigate pressure, and contribute to a collective creative goal—skills that translate directly to collaboration and leadership in engineering environments.",
         img: "./src/indakan.png",
         mentor:"",
@@ -615,7 +615,7 @@ for (let i = 1; i < data.length; i++) {
       const rightCircle = document.getElementById('rightCircle');
       const lefterCircle = document.getElementById('lefterCircle');
       const leftestCircle = document.getElementById('leftestCircle');
-      centerBubble.addEventListener("mouseenter", () => {
+      centerBubble.addEventListener("click", () => {
         gsap.to(centerBubble, {
           width: 300,
           height: 300,
@@ -647,7 +647,7 @@ for (let i = 1; i < data.length; i++) {
       });
 
       // Don't hide the delayedCircle on centerBubble mouseleave
-      centerBubble.addEventListener("mouseleave", () => {
+      centerBubble.addEventListener("click", () => {
         gsap.to(centerBubble, {
           width: 250,
           height: 250,
@@ -664,7 +664,7 @@ for (let i = 1; i < data.length; i++) {
       });
 
       // ✅ Hide only when leaving the delayedCircle itself
-      delayedCircle.addEventListener("mouseleave", () => {
+      delayedCircle.addEventListener("click", () => {
         overlay.style.opacity = 0;
 
         gsap.to(delayedCircle, {
@@ -684,7 +684,7 @@ for (let i = 1; i < data.length; i++) {
 
       bubble.isAnimating = false;
 
-      bubble.addEventListener("mouseenter", () => {
+      bubble.addEventListener("click", () => {
         if (bubble.isAnimating || currentCenteredBubble) return;
         bubble.isAnimating = true;
         currentCenteredBubble = bubble;
@@ -776,7 +776,7 @@ for (let i = 1; i < data.length; i++) {
         }
       });
 
-      bubble.addEventListener("mouseleave", () => {
+      bubble.addEventListener("click", () => {
         if (bubble.isAnimating) return;
         bubble.isAnimating = true;
 
