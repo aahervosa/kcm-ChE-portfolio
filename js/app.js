@@ -613,10 +613,16 @@ for (let i = 1; i < data.length; i++) {
 
       let timeoutId;
       const delayedCircle = document.getElementById('delayedCircle');
-      const leftCircle = document.getElementById('leftCircle');
-      const rightCircle = document.getElementById('rightCircle');
-      const lefterCircle = document.getElementById('lefterCircle');
-      const leftestCircle = document.getElementById('leftestCircle');
+      const experiences = document.getElementById('experiences');
+      const skills = document.getElementById('skills');
+      const education = document.getElementById('education');
+      const creative = document.getElementById('creative');
+      const sablay = document.getElementById('sablay');
+      const toga = document.getElementById('toga');
+      const upd = document.getElementById('upd');
+      const coe = document.getElementById('coe');
+      const dche = document.getElementById('dche');
+      const kem = document.getElementById('kem');
       centerBubble.addEventListener("click", () => {
         gsap.to(centerBubble, {
           width: 300,
@@ -635,7 +641,7 @@ for (let i = 1; i < data.length; i++) {
             { scale: 0, opacity: 0 }, 
             { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)",
               onComplete: () => {
-                gsap.fromTo([rightCircle, leftCircle, lefterCircle, leftestCircle],
+                gsap.fromTo([experiences, skills, education, creative, sablay, toga, upd, coe, dche, kem],
                    { scale: 0, opacity: 0 }, 
                    { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)"}
                 );
@@ -695,7 +701,7 @@ for (let i = 1; i < data.length; i++) {
           ease: "power2.inOut",
           onComplete: () => {
             delayedCircle.style.display = "none";
-             gsap.fromTo([rightCircle, leftCircle, lefterCircle, leftestCircle],
+             gsap.fromTo([experiences, skills, education, creative, sablay, toga, upd, coe, dche, kem],
                 { scale: 1, opacity: 1 }, 
                 { scale: 0, opacity: 0, duration: 0.5, ease: "back.out(1.7)"}
             );
