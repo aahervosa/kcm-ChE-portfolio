@@ -616,6 +616,7 @@ for (let i = 1; i < data.length; i++) {
       const experiences = document.getElementById('experiences');
       const skills = document.getElementById('skills');
       const education = document.getElementById('education');
+      const contact = document.getElementById('contact');
       const creative = document.getElementById('creative');
       const sablay = document.getElementById('sablay');
       const toga = document.getElementById('toga');
@@ -641,7 +642,7 @@ for (let i = 1; i < data.length; i++) {
             { scale: 0, opacity: 0 }, 
             { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)",
               onComplete: () => {
-                gsap.fromTo([experiences, skills, education, creative, sablay, toga, upd, coe, dche, kem],
+                gsap.fromTo([experiences, skills, education, contact, creative, sablay, toga, upd, coe, dche, kem],
                    { scale: 0, opacity: 0 }, 
                    { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)"}
                 );
@@ -701,7 +702,7 @@ for (let i = 1; i < data.length; i++) {
           ease: "power2.inOut",
           onComplete: () => {
             delayedCircle.style.display = "none";
-             gsap.fromTo([experiences, skills, education, creative, sablay, toga, upd, coe, dche, kem],
+             gsap.fromTo([experiences, skills, education, contact, creative, sablay, toga, upd, coe, dche, kem],
                 { scale: 1, opacity: 1 }, 
                 { scale: 0, opacity: 0, duration: 0.5, ease: "back.out(1.7)"}
             );
